@@ -4,8 +4,6 @@ VSC - Vue Station Cluster VUE站群前端系统
 #### 项目介绍
 VSC 基于vue的纯前端站群源码 支持多种模板和布局 <br/>
 
-特性：1、响应式 2、自适应  <br/>
-
 <h3>说明</h3>
 当前版本默认为【在线影视站的】模板布局。 <br>
 示例预览：http://v.meyho.cn/
