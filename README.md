@@ -1,7 +1,9 @@
 # vsc
 VSC - Vue Station Cluster VUE站群前端系统 
 
-当前版本：<font color=#35495e size=72>vsc</font>  <font color=#41b883 size=72>1.0.0</font>
+当前版本：<table><tr><td bgcolor=#35495e><font color=#008000>我是绿色</font></td></tr></table>
+
+<font color=#35495e size=72>vsc</font>  <font color=#41b883 size=72>1.0.0</font>
 
 #### 项目介绍
 VSC 基于vue的纯前端站群源码 支持多种模板和布局 <br/>
