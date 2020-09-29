@@ -1,4 +1,4 @@
-# [VSC - Vue Station Cluster](http://v.meyho.cn)
+# [VSC - Vue Station Cluster](https://github.com/crazy25260/vsc)
 ![version](https://img.shields.io/badge/version-1.0.0-green.svg)
 
 #### Description
@@ -11,7 +11,7 @@ VSC is a Front-Web Project for Station Cluster <br>
 - 后续会加入各种界面模板机制以可以灵活的自定义个性化的设备版面适配。
 - 可与任意语言开发的后台接口系统对接，快速组装前后端分离站群系统。
 
-#### 变更日志
-2020-09-29 初始化本项目工程。
+#### Change Log
+2020-09-29 Project is initialized.
 
 
