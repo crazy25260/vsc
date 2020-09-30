@@ -14,6 +14,9 @@ VSC is a Front-Web Project for Station Cluster based on Vue.js.<br>
 
 - A front-back stage decoupling web station cluster can be made up when the VSC combine with a web-interface back stage.
   Whatever the developed language of the back state.
+  
+- Several functional modules are still in developing. Sucn as search, login, slide pane, video comment, and video tags etc.
+  Even now all the crucial modules are available enough. <br>
 
  List Page | Play Page |
 | --- | --- |
@@ -48,7 +51,10 @@ VSC 是一个基于VUE.js开发的前端站群系统 <br>
 - 风格主要偏手机版，PC版不作为重点考虑。<br/>
 - 后续会加入更多模板和功能模块作为扩展。
 - 可与任意语言开发的后台接口系统对接，快速组装前后端分离站群系统。
-
+- 虽然还有很多功能模块仍处在规划和开发中，但是主要的核心功能已经可以使用。<br>
+  - 目前可用的基本核心功能有：品牌导航栏/走马灯分类导航栏/走马灯幻灯片/推荐页/列表页/播放页/视频相关列表区域 <br>
+  - 尚在规划和开发中的核心基本功能有：搜索，登录，我的（登录信息），视频评论，视频标签
+  
 #### 安装和本地运行
 ```
 #安装
