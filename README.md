@@ -31,6 +31,12 @@ npm run serve
 #### Change Log
 2020-09-29 Project is initialized.
 
+#### Author & Contact
+- Author: Dema Dadi
+- Email: crazy25260@hotmail.com
+- QQ: 306388227
+- CSDN blog: https://blog.csdn.net/crazy22222 
+
 # 中文
 
 #### 描述
@@ -54,5 +60,11 @@ npm run serve
 
 #### 变更日志
 2020-09-29 工程初始化建立。
+
+#### 联系作者
+- 作者: 德玛大帝
+- 邮箱: crazy25260@hotmail.com
+- QQ: 306388227
+- CSDN主页: https://blog.csdn.net/crazy22222 
 
 
