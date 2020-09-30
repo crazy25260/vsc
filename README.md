@@ -15,6 +15,18 @@ VSC is a Front-Web Project for Station Cluster <br>
 - A front-back stage decoupling web station cluster can be made up when the VSC combine with a web-interface back stage.
   Whatever the developed language of the back state.
 
+ List Page | Play Page |
+| --- | --- |
+| ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot1.png) | ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot2.png)
+
+```
+#install
+npm install
+
+#run
+npm run serve
+```
+
 #### Change Log
 2020-09-29 Project is initialized.
 
@@ -29,6 +41,15 @@ VSC 是一个基于VUE.js开发的前端站群系统 <br>
 - 风格主要偏手机版，PC版不作为重点考虑。<br/>
 - 后续会加入更多模板和功能模块作为扩展。
 - 可与任意语言开发的后台接口系统对接，快速组装前后端分离站群系统。
+
+#### 安装和本地运行
+```
+#安装
+npm install
+
+#运行
+npm run serve
+```
 
 #### 变更日志
 2020-09-29 工程初始化建立。
