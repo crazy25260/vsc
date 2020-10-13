@@ -46,18 +46,6 @@ export default {
             id: "2",
             src:
               "http://media.meyho.cn/image/2020/vsc/sample/carousel/carousel2.jpg"
-          },
-          {
-            name: "pic3",
-            id: "3",
-            src:
-              "http://media.meyho.cn/image/2020/vsc/sample/carousel/carousel3.jpg"
-          },
-          {
-            name: "pic4",
-            id: "4",
-            src:
-              "http://media.meyho.cn/image/2020/vsc/sample/carousel/carousel4.jpg"
           }
         ];
       }

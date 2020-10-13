@@ -1,4 +1,4 @@
-const NavMenu = {
+const BaseFrame = {
   computed: {
     current_nav() {
       if (this.$store.state.nav_model.nav_categories) {
@@ -15,4 +15,4 @@ const NavMenu = {
   }
 };
 
-export default NavMenu;
+export default BaseFrame;

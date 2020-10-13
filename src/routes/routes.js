@@ -3,14 +3,17 @@ import VueRouter from "vue-router";
 import MainEntry from "@/layouts/MainEntry";
 import StandardIndex from "@/templates/default/mh-tpl-std-0/StandardIndex";
 
-// import SimpleIndex from "@/templates/private/video/porn/simple/SimpleIndex";
-// import SimplePlay from "@/templates/private/video/porn/simple/SimplePlay";
-// import SimpleList from "@/templates/private/video/porn/simple/SimpleList";
-
 import SimpleIndex from "@/templates/default/mh-tpl-std-video/simple/SimpleIndex";
-import SimpleList from "@/templates/default/mh-tpl-std-video/simple/SimpleList";
-import SimplePlay from "@/templates/default/mh-tpl-std-video/simple/SimplePlay";
+// import IndexFrame from "@/templates/framework/base/IndexFrame";
+// import SimpleList from "@/templates/default/mh-tpl-std-video/simple/SimpleList";
+// import SimplePlay from "@/templates/default/mh-tpl-std-video/simple/SimplePlay";
 import SimpleLogin from "@/templates/default/mh-tpl-std-video/simple/SimpleLogin";
+
+import HeaderFrame from "@/templates/framework/base/HeaderFrame";
+import Footer from "@/components-depository/footer/Footer";
+import VideoRecommendedFrame from "@/templates/framework/video/VideoRecommendedFrame";
+import VideoListFrame from "@/templates/framework/video/VideoListFrame";
+import VideoPlayFrame from "@/templates/framework/video/VideoPlayFrame";
 
 Vue.use(VueRouter);
 
@@ -27,17 +30,40 @@ const routes = [
   {
     path: "/simple",
     name: "simple",
-    components: { default: SimpleIndex }
-  },
-  {
-    path: "/simple/list",
-    name: "simple_list",
-    components: { default: SimpleList }
-  },
-  {
-    path: "/simple/play",
-    name: "simple_play",
-    components: { default: SimplePlay }
+    redirect: "/simple/",
+    components: { default: SimpleIndex },
+    children: [
+      {
+        path: "/",
+        name: "simple-index",
+        components: {
+          default: VideoRecommendedFrame,
+          header: HeaderFrame,
+          footer: Footer
+        },
+        props: {
+          showCarousel: true
+        }
+      },
+      {
+        path: "/simple/list",
+        name: "simple_list",
+        components: {
+          default: VideoListFrame,
+          header: HeaderFrame,
+          footer: Footer
+        }
+      },
+      {
+        path: "/simple/play",
+        name: "simple_play",
+        components: {
+          default: VideoPlayFrame,
+          header: HeaderFrame,
+          footer: Footer
+        }
+      }
+    ]
   },
   {
     path: "/login-page",

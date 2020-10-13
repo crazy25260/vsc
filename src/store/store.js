@@ -27,9 +27,6 @@ const store = new Vuex.Store({
         state.nav_model = storeModel.nav_model;
       }
     },
-    setNavCategories(state, nav_categories) {
-      state.nav_model.nav_categories = nav_categories;
-    },
     setCurrentNavCategory(state, selectedIndex) {
       state.nav_model.nav_index = selectedIndex;
     },
