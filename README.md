@@ -1,5 +1,5 @@
 # [VSC - Vue Station Cluster](https://github.com/crazy25260/vsc)
-![version](https://img.shields.io/badge/version-1.0.0-green.svg) [![GitHub issues open](https://img.shields.io/github/issues/crazy25260/vsc.svg)](https://github.com/crazy25260/vsc/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/crazy25260/vsc.svg?maxAge=259200)](https://github.com/crazy25260/vsc/issues?q=is%3Aissue+is%3Aclosed)
+![version](https://img.shields.io/badge/version-1.1.0-green.svg) [![GitHub issues open](https://img.shields.io/github/issues/crazy25260/vsc.svg)](https://github.com/crazy25260/vsc/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/crazy25260/vsc.svg?maxAge=259200)](https://github.com/crazy25260/vsc/issues?q=is%3Aissue+is%3Aclosed)
 
 #### Description
 
