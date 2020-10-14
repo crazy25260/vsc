@@ -33,6 +33,12 @@ npm run serve
 
 #### Change Log
 2020-09-29 Project is initialized.
+2020-10-14 project frame logic is optimized.
+- material icon self-served is imported.
+- routes.js's props take effect.
+- UI-frame's logic is optimized.
+- fixed some terrible Elementui user experience.
+- fixed other tiny bugs.
 
 #### Author & Contact
 - Author: Dema Dadi
@@ -65,7 +71,13 @@ npm run serve
 ```
 
 #### 变更日志
-2020-09-29 工程初始化建立。
+2020-09-29 工程初始化建立。 <br>
+2020-10-14 框架优化。
+- material icon库，自搭建引入成功呈现。
+- routes.js 传入初始化属性 正常生效。
+- 界面 frame 逻辑优化完毕。
+- 修复Elementui 抽屉窗口造成窗口抖动的细节体验。
+- 优化其他细微BUG。
 
 #### 联系作者
 - 作者: 德玛大帝
