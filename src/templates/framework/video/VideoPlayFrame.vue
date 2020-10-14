@@ -56,7 +56,7 @@ export default {
     VideoRelatedTab,
     BreadCrumb
   },
-  mixins: [FrameMixins.VideoPlay, VscMixins.SiteInfo],
+  mixins: [FrameMixins.ContentFrame, FrameMixins.VideoPlay, VscMixins.SiteInfo],
   data() {
     return {
       player_width: 800,
@@ -156,7 +156,6 @@ export default {
       }
     },
     onSlideDrawerShow() {
-      console.log("play page onSlideDrawerShow");
       this.$refs.player.pause();
     },
     fillData() {
@@ -197,7 +196,6 @@ export default {
 }
 
 .player-wrapper {
-  padding-top: 2rem;
   width: 100%;
   height: 35vh;
 

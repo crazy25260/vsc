@@ -25,13 +25,20 @@ const routes = [
   {
     path: "/index",
     name: "index",
-    components: { default: StandardIndex }
+    components: { default: StandardIndex },
+    props: {
+      default: { test: "test---props--hello!" }
+    }
   },
   {
     path: "/simple",
     name: "simple",
     redirect: "/simple/",
     components: { default: SimpleIndex },
+    props: {
+      showCarousel: false,
+      test: "hohohohoho"
+    },
     children: [
       {
         path: "/",
@@ -42,7 +49,7 @@ const routes = [
           footer: Footer
         },
         props: {
-          showCarousel: true
+          header: { showCarousel: true, test: "hehehe" }
         }
       },
       {
@@ -62,13 +69,17 @@ const routes = [
           header: HeaderFrame,
           footer: Footer
         }
+      },
+      {
+        path: "/login-page",
+        name: "login",
+        components: {
+          default: SimpleLogin,
+          header: HeaderFrame,
+          footer: Footer
+        }
       }
     ]
-  },
-  {
-    path: "/login-page",
-    name: "login",
-    components: { default: SimpleLogin }
   }
 ];
 

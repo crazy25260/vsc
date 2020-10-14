@@ -79,7 +79,6 @@ export default {
 
 <style lang="scss" scoped>
 .el-menu-demo {
-  position: fixed;
   z-index: 1030;
   left: 0;
   right: 0;

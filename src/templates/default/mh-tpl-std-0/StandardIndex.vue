@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: "StandardIndex"
+  name: "StandardIndex",
+  props: {
+    test: {
+      type: String
+    }
+  },
+  mounted() {
+    console.log(this.$options.name + "333333333:" + this.test);
+  }
 };
 </script>
 

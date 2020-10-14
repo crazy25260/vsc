@@ -1,7 +1,7 @@
 <template>
   <div class="md-layout">
     <div class="md-layout-item">
-      <md-toolbar class="md-info md-fixed">
+      <md-toolbar class="md-info">
         <div class="md-toolbar-row">
           <div class="md-toolbar-section-start">
             <router-link to="/">
@@ -111,6 +111,7 @@
 <script>
 import VscMixins from "@/mixins/vsc-mixins";
 import EuiDrawer from "@/components-depository/sideboard/EuiDrawer";
+import {addClass} from "element-ui/src/utils/dom";
 export default {
   name: "BrandNavBar",
   components: {
@@ -135,12 +136,27 @@ export default {
     };
   },
   mixins: [VscMixins.SiteInfo],
+  created() {
+    // 为了防止——elementUI的抽屉窗口弹出时，会因为检测el-popup-parent--hidden不存在，而自动添加padding-right的style
+    // 造成窗口抖动，本组件在创建初期，自动加上el-popup-parent--hidden，来防止页面抖动。
+    addClass(document.body, "el-popup-parent--hidden");
+  },
   methods: {
     onSlideMenuClick() {
       this.$emit("slide_drawer_show");
       this.$refs.slideDrawer.drawer = true;
     },
     onSearchClick() {
+      let bodyHasOverflow =
+        document.documentElement.clientHeight < document.body.scrollHeight;
+      console.log(
+        "document.documentElement.clientHeight:" +
+          document.documentElement.clientHeight +
+          ",document.body.scrollHeight:" +
+          document.body.scrollHeight +
+          ", bodyHasOverflow:" +
+          bodyHasOverflow
+      );
       this.drawer = true;
     },
     handleClose(done) {

@@ -5,22 +5,20 @@ import VideoPlay from "@/mixins/video/play-frame";
 
 const ContentFrame = {
   methods: {
-    onHeaderMsg(msg, toNavItem, fromNavItem) {
-      console.log("11111:" + msg + ", to:" + JSON.stringify(toNavItem));
+    onHeaderMsg(msg, param1, param2) {
       switch (msg) {
         case "slide_drawer_show":
-          this.$refs.content.onSlideDrawerShow();
+          this.onSlideDrawerShow();
           break;
         case "nav-click":
           break;
         case "nav-changed":
-          console.log("33333:" + msg + ", to:" + JSON.stringify(toNavItem));
-          this.onPageChange(toNavItem.id, 1);
-          break;
-        case "frame-changed":
-          this.onPageChange(toNavItem.id, 1);
+          this.onPageChange(param1.id, 1);
           break;
       }
+    },
+    onSlideDrawerShow() {
+      console.log("onSlideDrawerShow()");
     }
   }
 };

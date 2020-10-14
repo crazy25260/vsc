@@ -1,22 +1,29 @@
 <template>
   <div>
-    <div class="brand-nav-zone">
-      <BrandNavBar
-        @slide_drawer_show="$emit('header-msg', 'slide_drawer_show')"
-      ></BrandNavBar>
+    <div ref="fixed_bar" class="md-layout header-frame">
+      <div class="md-layout-item md-size-100">
+        <BrandNavBar
+          @slide_drawer_show="$emit('header-msg', 'slide_drawer_show')"
+        ></BrandNavBar>
+      </div>
+      <div class="md-layout-item">
+        <CarouselNavBar
+          @nav-click="
+            (index, keyPath) => {
+              $emit('header-msg', 'nav-click', {
+                index: index,
+                keyPath: keyPath
+              });
+            }
+          "
+          :current_cate="current_nav"
+          ref="carousel_nav"
+        ></CarouselNavBar>
+      </div>
     </div>
-
-    <CarouselNavBar
-      @nav-click="
-        (index, keyPath) => {
-          $emit('header-msg', 'nav-click', { index: index, keyPath: keyPath });
-        }
-      "
-      :current_cate="current_nav"
-      ref="carousel_nav"
-    ></CarouselNavBar>
-
-    <Carousel v-if="showCarousel" :carousel_pics="carousel_model"></Carousel>
+    <div :style="headCarousel">
+      <Carousel v-if="showCarousel" :carousel_pics="carousel_model"></Carousel>
+    </div>
   </div>
 </template>
 
@@ -33,7 +40,7 @@ export default {
   props: {
     showCarousel: {
       type: Boolean,
-      default: true
+      default: false
     },
     carousel_model: {
       type: Array,
@@ -67,13 +74,46 @@ export default {
       }
     }
   },
-  methods: {
-    // onSlideDrawerShow() {
-    //   console.log("onSlideDrawerShow()->slide_drawer_show");
-    //   this.$emit("slide_drawer_show");
-    // }
+  data() {
+    return {
+      fixed_height: 0
+    };
+  },
+  computed: {
+    carousel_top() {
+      return this.$refs.fixed_bar.clientHeight;
+    },
+    headCarousel() {
+      return {
+        paddingTop: this.fixed_height + "px"
+      };
+    }
+  },
+  mounted() {
+    console.log(
+      "22222:showCarousel:" + this.showCarousel + ", test:" + this.test
+    );
+    this.fixed_height = this.carousel_top;
+    window.onresize = () => {
+      return (() => {
+        this.fixed_height = this.carousel_top;
+      })();
+    };
   }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header-frame {
+  position: fixed;
+  z-index: 1030;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+}
+
+.header-fixed {
+  position: fixed;
+  z-index: 1030;
+}
+</style>
