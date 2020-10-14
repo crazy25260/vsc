@@ -32,7 +32,7 @@ npm run serve
 ```
 
 #### Change Log
-2020-09-29 Project is initialized.
+2020-09-29 Project is initialized. <br>
 2020-10-14 project frame logic is optimized.
 - material icon self-served is imported.
 - routes.js's props take effect.
