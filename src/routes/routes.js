@@ -35,10 +35,6 @@ const routes = [
     name: "simple",
     redirect: "/simple/",
     components: { default: SimpleIndex },
-    props: {
-      showCarousel: false,
-      test: "hohohohoho"
-    },
     children: [
       {
         path: "/",
@@ -49,7 +45,7 @@ const routes = [
           footer: Footer
         },
         props: {
-          header: { showCarousel: true, test: "hehehe" }
+          header: { showCarousel: true }
         }
       },
       {

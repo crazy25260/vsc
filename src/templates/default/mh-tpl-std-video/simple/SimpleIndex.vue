@@ -1,10 +1,6 @@
 <template>
   <div>
-    <router-view
-      name="header"
-      ref="header"
-      @header-msg="onHeaderMsg"
-    />
+    <router-view name="header" ref="header" @header-msg="onHeaderMsg" />
     <router-view ref="content" />
     <router-view name="footer" ref="footer" />
   </div>
@@ -16,25 +12,11 @@ import VscMixins from "@/mixins/vsc-mixins";
 export default {
   name: "SimpleIndex",
   props: {
-    showCarousel: {
-      type: Boolean,
-      default: true
-    },
     test: {
       type: String
     }
   },
   mixins: [VscMixins.NavMenu],
-  mounted() {
-    console.log(
-      "00000:" +
-        this.$refs.header.$options.name +
-        ", showCarousel:" +
-        this.$refs.header.showCarousel +
-        ", test:" +
-        this.test
-    );
-  },
   methods: {
     onHeaderMsg(msg, params) {
       console.log(this.$options.name + "::onHeaderMsg():" + msg);

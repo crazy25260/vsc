@@ -90,9 +90,6 @@ export default {
     }
   },
   mounted() {
-    console.log(
-      "22222:showCarousel:" + this.showCarousel + ", test:" + this.test
-    );
     this.fixed_height = this.carousel_top;
     window.onresize = () => {
       return (() => {
