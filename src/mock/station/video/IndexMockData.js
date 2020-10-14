@@ -200,6 +200,25 @@ const videoPool = [
         videoRemark: "480p"
       }
     ]
+  },
+  {
+    name: "大决战之辽沈战役",
+    id: "11",
+    thumbPic: "http://media.meyho.cn/image/movie/youtube/202010/djz-lszy.png",
+    playFromInfos: [
+      {
+        playUrl:
+          "http://media.meyho.cn/video/movie/youtube/202010/djz-lszy/djz-lszy.m3u8",
+        sourceName: "俄罗斯线路",
+        videoRemark: "480p"
+      },
+      {
+        playUrl:
+          "http://media.meyho.cn/video/movie/youtube/202010/djz-lszy/djz-lszy.m3u8",
+        sourceName: "香港线路",
+        videoRemark: "480p"
+      }
+    ]
   }
 ];
 
@@ -300,12 +319,21 @@ const videoCoverPool = [
     desc: "社会艰险套路多，老梁帮你来击破。发刊词-超清720P...",
     cardTitleHeader: "老梁系列",
     pubTime: "2020-07-14 09:10:12"
+  },
+  {
+    thumbPic: "http://media.meyho.cn/image/movie/youtube/202010/djz-lszy.png",
+    name: "大决战之辽沈战役",
+    id: "11",
+    desc: "【大决战—辽沈战役】 1991年 中国经典怀旧电影 Chinese classical movie",
+    cardTitleHeader: "经典怀旧-大决战",
+    pubTime: "2020-10-14 16:10:12"
   }
 ];
 
 // 推荐类列表
 let SimpleVideoCardList = [
   videoCoverPool[3],
+  videoCoverPool[10],
   videoCoverPool[2],
   videoCoverPool[1],
   videoCoverPool[0],
