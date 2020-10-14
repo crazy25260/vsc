@@ -1,4 +1,4 @@
-import { loadCardListModel, loadIndexModel } from "@/api/data/index-model";
+import { loadIndexModel } from "@/api/data/index-model";
 
 const VideoIndex = {
   data() {
@@ -6,8 +6,7 @@ const VideoIndex = {
       frame_name: "VideoIndex",
       brand_model: {},
       carousel_model: [],
-      nav_model: [],
-      list_model: []
+      nav_model: []
     };
   },
   created() {
@@ -24,16 +23,6 @@ const VideoIndex = {
       path: this.$router.currentRoute.path,
       name: "首页"
     });
-    this.$eventBus.$on("more-data", p => {
-      //这里最好用箭头函数，不然this指向有问题
-      this.list_model.push({
-        thumbPic: require("@/assets/img/bg5.jpg"),
-        name: "push",
-        desc: "push",
-        cardTitleHeader: "push",
-        pubTime: "2020-07-14 09:10:12"
-      });
-    });
   },
   methods: {
     renderIndex(r) {
@@ -41,7 +30,6 @@ const VideoIndex = {
       this.brand_model = indexModel.brand_model;
       this.carousel_model = indexModel.carousel_pics;
       this.nav_model = indexModel.nav_model;
-      this.list_model = indexModel.index_list;
 
       this.$store.commit("init", {
         site_infos: [
@@ -52,23 +40,6 @@ const VideoIndex = {
           }
         ],
         nav_model: this.nav_model
-      });
-    },
-    renderList(r) {
-      this.list_model = r.data;
-    },
-    onVideoCoverClick(params) {
-      this.$store.commit("navigate", {
-        router: this.$router,
-        path_name: "simple_play",
-        data: params.card_data
-      });
-    },
-    onLoadPage(cate_id, page) {
-      loadCardListModel(cate_id, page).then(r => {
-        this.renderList(r);
-        this.$vscCommon.scrollToTop();
-        this.setPage(page);
       });
     }
   }

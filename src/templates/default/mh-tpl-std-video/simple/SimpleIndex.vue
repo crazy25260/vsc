@@ -1,6 +1,11 @@
 <template>
   <div>
-    <router-view name="header" ref="header" @header-msg="onHeaderMsg" />
+    <router-view
+      name="header"
+      ref="header"
+      @header-msg="onHeaderMsg"
+      :carousel_model="carousel_model"
+    />
     <router-view ref="content" />
     <router-view name="footer" ref="footer" />
   </div>
@@ -8,6 +13,7 @@
 
 <script>
 import VscMixins from "@/mixins/vsc-mixins";
+import FrameMixins from "@/mixins/frame-mixins";
 
 export default {
   name: "SimpleIndex",
@@ -16,7 +22,7 @@ export default {
       type: String
     }
   },
-  mixins: [VscMixins.NavMenu],
+  mixins: [VscMixins.NavMenu, FrameMixins.VideoIndex],
   methods: {
     onHeaderMsg(msg, params) {
       console.log(this.$options.name + "::onHeaderMsg():" + msg);

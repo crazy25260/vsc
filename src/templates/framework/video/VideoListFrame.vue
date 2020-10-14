@@ -37,12 +37,7 @@ export default {
     FrameMixins.ContentFrame,
     FrameMixins.VideoList,
     VscMixins.Pagination
-  ],
-  methods: {
-    onPageChange(nav_id, item) {
-      this.onLoadPage(nav_id, item);
-    }
-  }
+  ]
 };
 </script>
 

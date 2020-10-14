@@ -1,5 +1,6 @@
 import BaseFrame from "@/mixins/frame";
 import VideoIndex from "@/mixins/video/index-frame";
+import VideoRecommended from "@/mixins/video/recommended-frame";
 import VideoList from "@/mixins/video/list-frame";
 import VideoPlay from "@/mixins/video/play-frame";
 
@@ -13,12 +14,15 @@ const ContentFrame = {
         case "nav-click":
           break;
         case "nav-changed":
-          this.onPageChange(param1.id, 1);
+          this.onLoadPage(param1.id, 1);
           break;
       }
     },
     onSlideDrawerShow() {
       console.log("onSlideDrawerShow()");
+    },
+    onPageChange(item) {
+      this.onLoadPage(this.current_nav, item);
     }
   }
 };
@@ -27,6 +31,7 @@ const FrameMixins = {
   BaseFrame,
   ContentFrame,
   VideoIndex,
+  VideoRecommended,
   VideoList,
   VideoPlay
 };

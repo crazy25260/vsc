@@ -42,14 +42,9 @@ export default {
   mixins: [
     FrameMixins.BaseFrame,
     FrameMixins.ContentFrame,
-    FrameMixins.VideoIndex,
+    FrameMixins.VideoRecommended,
     VscMixins.Pagination
-  ],
-  methods: {
-    onPageChange(nav_id, item) {
-      this.onLoadPage(nav_id, item);
-    }
-  }
+  ]
 };
 </script>
 
