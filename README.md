@@ -32,14 +32,16 @@ npm run serve
 ```
 
 #### Change Log
-2020-09-29 Project is initialized. <br>
-2020-10-14 project frame logic is optimized.
+2020-10-15 remake the breadcrumb layout component. <br/>
+
+2020-10-14 project frame logic is optimized. <br/>
 - material icon self-served is imported.
 - routes.js's props take effect.
 - UI-frame's logic is optimized.
 - fixed some terrible Elementui user experience.
-- fixed other tiny bugs.
-2020-10-15 remake the breadcrumb layout component.
+- fixed other tiny bugs. <br/>
+
+2020-09-29 Project is initialized. 
 
 #### Author & Contact
 - Author: Dema Dadi
@@ -72,14 +74,15 @@ npm run serve
 ```
 
 #### 变更日志
-2020-09-29 工程初始化建立。 <br>
-2020-10-14 框架优化。
+2020-10-15 重做了面包屑导航层的组件及其相关逻辑。 <br/>
+2020-10-14 框架优化。 <br/>
 - material icon库，自搭建引入成功呈现。
 - routes.js 传入初始化属性 正常生效。
 - 界面 frame 逻辑优化完毕。
 - 修复Elementui 抽屉窗口造成窗口抖动的细节体验。
-- 优化其他细微BUG。
-2020-10-15 重做了面包屑导航层的组件及其相关逻辑。
+- 优化其他细微BUG。 <br/>
+
+2020-09-29 工程初始化建立。 
 
 #### 联系作者
 - 作者: 德玛大帝
