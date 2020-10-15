@@ -28,7 +28,7 @@
         @video_line_change="onLineChange"
         ref="videolines"
       ></VideoLines>
-      <BreadCrumb></BreadCrumb>
+      <BreadFrame></BreadFrame>
       <md-divider></md-divider>
       <VideoRelatedTab
         @related-card-click="onRelatedClicked"
@@ -44,17 +44,17 @@ import "video.js/dist/video-js.css";
 import { vsc_common } from "@/api/vsc-common";
 import VideoLines from "@/components-depository/video/VideoLines";
 import VideoRelatedTab from "@/components-depository/video/VideoRelatedTab";
-import BreadCrumb from "@/components-depository/common/BreadCrumb";
 import FrameMixins from "@/mixins/frame-mixins";
 import VscMixins from "@/mixins/vsc-mixins";
+import BreadFrame from "@/templates/framework/base/BreadFrame";
 
 export default {
   name: "VideoPlayFrame",
   components: {
+    BreadFrame,
     VideoPlayer,
     VideoLines,
-    VideoRelatedTab,
-    BreadCrumb
+    VideoRelatedTab
   },
   mixins: [FrameMixins.ContentFrame, FrameMixins.VideoPlay, VscMixins.SiteInfo],
   data() {

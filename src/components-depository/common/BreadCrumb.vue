@@ -4,7 +4,7 @@
       <div class="breadcrumb">
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item
-            v-for="(item, index) in steps"
+            v-for="(item, index) in traces"
             :key="index"
             :to="{ path: item.path }"
           >
@@ -24,10 +24,21 @@
 <script>
 export default {
   name: "BreadCrumb",
+  data() {
+    return {
+      traces: [{ path: "/", name: "缺省" }]
+    };
+  },
   computed: {
     steps() {
       return this.$store.state.path_trace;
     }
+  },
+  created() {
+    this.$on("breadcrumb-changed", params => {
+      console.log("hehehehe======breadcrumb-changed");
+      this.traces = this.$store.state.path_trace;
+    });
   }
 };
 </script>

@@ -2,11 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import MainEntry from "@/layouts/MainEntry";
 import StandardIndex from "@/templates/default/mh-tpl-std-0/StandardIndex";
-
 import SimpleIndex from "@/templates/default/mh-tpl-std-video/simple/SimpleIndex";
-// import IndexFrame from "@/templates/framework/base/IndexFrame";
-// import SimpleList from "@/templates/default/mh-tpl-std-video/simple/SimpleList";
-// import SimplePlay from "@/templates/default/mh-tpl-std-video/simple/SimplePlay";
 import SimpleLogin from "@/templates/default/mh-tpl-std-video/simple/SimpleLogin";
 
 import HeaderFrame from "@/templates/framework/base/HeaderFrame";
@@ -14,6 +10,7 @@ import Footer from "@/components-depository/footer/Footer";
 import VideoRecommendedFrame from "@/templates/framework/video/VideoRecommendedFrame";
 import VideoListFrame from "@/templates/framework/video/VideoListFrame";
 import VideoPlayFrame from "@/templates/framework/video/VideoPlayFrame";
+import BreadFrame from "@/templates/framework/base/BreadFrame";
 
 Vue.use(VueRouter);
 
@@ -42,6 +39,7 @@ const routes = [
         components: {
           default: VideoRecommendedFrame,
           header: HeaderFrame,
+          breadcrumb: BreadFrame,
           footer: Footer
         },
         props: {
@@ -54,6 +52,7 @@ const routes = [
         components: {
           default: VideoListFrame,
           header: HeaderFrame,
+          breadcrumb: BreadFrame,
           footer: Footer
         }
       },

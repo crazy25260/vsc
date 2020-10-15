@@ -83,15 +83,6 @@ export default {
       1000,
       false
     );
-
-    window.onresize = () => {
-      return (() => {
-        let newPreviewNum = document.body.clientWidth > 992 ? 3 : 1;
-        if (newPreviewNum !== this.previewNum) {
-          location = location; //页面刷新
-        }
-      })();
-    };
   },
   methods: {
     // 2020-08-26 swiper 6.X的版本的问题: 会导致前进后退按钮点击失效，且Pagination分页组件无法显示

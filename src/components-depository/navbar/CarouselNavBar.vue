@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="carousel-nav-bar">
     <el-menu
       :default-active="activeIndex"
       class="el-menu-demo"
@@ -78,6 +78,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.carousel-nav-bar {
+  height: 2rem;
+}
+
 .el-menu-demo {
   z-index: 1030;
   left: 0;

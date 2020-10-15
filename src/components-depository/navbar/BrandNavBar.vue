@@ -15,7 +15,7 @@
           </div>
           <md-list>
             <md-list-item href="javascript:void(0)">
-              <router-link to="/">
+              <router-link to="/simple">
                 <p>首页</p>
                 <md-icon>home</md-icon>
               </router-link>

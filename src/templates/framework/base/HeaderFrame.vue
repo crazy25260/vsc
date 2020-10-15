@@ -3,6 +3,7 @@
     <div ref="fixed_bar" class="md-layout header-frame">
       <div class="md-layout-item md-size-100">
         <BrandNavBar
+          ref="brand_navbar"
           @slide_drawer_show="$emit('header-msg', 'slide_drawer_show')"
         ></BrandNavBar>
       </div>
@@ -17,13 +18,18 @@
             }
           "
           :current_cate="current_nav"
-          ref="carousel_nav"
+          ref="navbar"
         ></CarouselNavBar>
       </div>
     </div>
-    <div :style="headCarousel">
-      <Carousel v-if="showCarousel" :carousel_pics="carousel_model"></Carousel>
-    </div>
+    <!--    头部固定浮动区域的打底样式 -- start -->
+    <div :style="headFixedBackground"></div>
+    <!--    头部固定浮动区域的打底样式 -- end -->
+    <Carousel
+      v-if="showCarousel"
+      ref="carousel"
+      :carousel_pics="carousel_model"
+    ></Carousel>
   </div>
 </template>
 
@@ -80,22 +86,56 @@ export default {
     };
   },
   computed: {
-    carousel_top() {
-      return this.$refs.fixed_bar.clientHeight;
+    fixedHeight() {
+      return (
+        this.$refs.brand_navbar.$el.offsetHeight +
+        this.$refs.navbar.$el.offsetHeight
+      );
     },
-    headCarousel() {
+    headFixedBackground() {
       return {
         paddingTop: this.fixed_height + "px"
       };
     }
   },
   mounted() {
-    this.fixed_height = this.carousel_top;
+    console.log(this.$options.name + " mounted.");
+    this.autoAdjustFixedBackGround();
     window.onresize = () => {
       return (() => {
-        this.fixed_height = this.carousel_top;
+        // this.autoAdjustFixedBackGround();
+        let newPreviewNum = document.body.clientWidth > 992 ? 3 : 1;
+        if (
+          this.showCarousel &&
+          newPreviewNum !== this.$refs.carousel.previewNum
+        ) {
+          location = location; //页面刷新
+        }
       })();
     };
+  },
+  watch: {
+    showCarousel: function(newShowCarousel, oldShowCarousel) {
+      console.log(
+        "======> showCarousel changed!!!!" +
+          oldShowCarousel +
+          "->" +
+          newShowCarousel
+      );
+      this.autoAdjustFixedBackGround();
+    }
+  },
+  methods: {
+    autoAdjustFixedBackGround() {
+      console.log("fixedHeight:" + this.fixedHeight);
+      console.log(
+        "brand_navbar height:" + this.$refs.brand_navbar.$el.offsetHeight
+      );
+      console.log("navbar height:" + this.$refs.navbar.$el.offsetHeight);
+      this.fixed_height =
+        this.$refs.brand_navbar.$el.offsetHeight +
+        this.$refs.navbar.$el.offsetHeight;
+    }
   }
 };
 </script>

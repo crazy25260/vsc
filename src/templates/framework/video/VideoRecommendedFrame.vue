@@ -1,6 +1,5 @@
 <template>
   <div>
-    <BreadCrumb></BreadCrumb>
     <BlogCardList
       :paddingTop="with_carousel ? 1.5 : 0.5"
       :blogCards="list_model"
@@ -21,7 +20,6 @@
 
 <script>
 import BlogCardList from "@/components-depository/common/infinite-scroll/BlogCardList";
-import BreadCrumb from "@/components-depository/common/BreadCrumb";
 import Pagination from "@/components/Pagination";
 import VscMixins from "@/mixins/vsc-mixins";
 import FrameMixins from "@/mixins/frame-mixins";
@@ -30,7 +28,6 @@ export default {
   name: "VideoRecommendedFrame",
   components: {
     BlogCardList,
-    BreadCrumb,
     Pagination
   },
   props: {
@@ -44,7 +41,10 @@ export default {
     FrameMixins.ContentFrame,
     FrameMixins.VideoRecommended,
     VscMixins.Pagination
-  ]
+  ],
+  mounted() {
+    console.log(this.$options.name + " mounted.");
+  }
 };
 </script>
 

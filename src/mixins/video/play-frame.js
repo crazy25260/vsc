@@ -4,32 +4,11 @@ import { loadPlayModel, loadRelatedModel } from "@/api/data/index-model";
 const VideoPlay = {
   data() {
     return {
-      frame_name: "VideoPlay",
       play_video: {},
       related_model: {}
     };
   },
   created() {
-    this.$eventBus.$on("nav-changed", (nav_cate, origin_nav_cate, sender) => {
-      // 如果不是本框架发出的导航变动时间，不予理会。
-      if (this.frame_name !== sender) {
-        return;
-      }
-
-      console.log(
-        "nav-changed received by VideoPlay, sender:" +
-          sender +
-          ", cur-path:" +
-          this.frame_name
-      );
-      if (this.$router.currentRoute.name !== "simple_list") {
-        this.$store.commit("navigate", {
-          router: this.$router,
-          path_name: "simple_list",
-          data: nav_cate
-        });
-      }
-    });
     // 加载更多的相关视频列表
     this.$eventBus.$on("more-data", p => {
       console.log("more-data");
@@ -60,10 +39,25 @@ const VideoPlay = {
       let playModel = r.data;
       this.play_video = playModel.play_video;
 
-      this.$store.state.path_trace.push({
-        path: this.$router.currentRoute.name,
-        name: playModel.play_video.name
-      });
+      if (this.$store.state.path_trace.length > 2) {
+        this.$store.state.path_trace.pop();
+      } else if (this.$store.state.path_trace.length === 2) {
+        this.$store.state.path_trace.push({
+          path: this.$router.currentRoute.name,
+          name: playModel.play_video.name
+        });
+      } else {
+        this.$store.state.path_trace = [
+          {
+            path: "/simple",
+            name: "首页"
+          },
+          {
+            path: this.$router.currentRoute.name,
+            name: playModel.play_video.name
+          }
+        ];
+      }
 
       this.$emit("video-data-ready");
     },

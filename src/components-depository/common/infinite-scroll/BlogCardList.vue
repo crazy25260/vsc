@@ -29,7 +29,7 @@
               添加时间： {{ blog_card.pubTime }}
             </h6>
             <h4 class="card-title">
-              <a href="javasript:void(0)">{{ blog_card.name }}</a>
+              <a href="javascript:void(0)">{{ blog_card.name }}</a>
             </h4>
             <p class="card-description">
               {{ blog_card.desc }}
@@ -101,12 +101,6 @@ export default {
   },
   methods: {
     loadMore() {
-      console.log(
-        "frame:" +
-          this.$parent.frame_name +
-          " load next page. category:" +
-          this.category
-      );
       this.$eventBus.$emit("more-data");
     },
     onCardClicked(params) {

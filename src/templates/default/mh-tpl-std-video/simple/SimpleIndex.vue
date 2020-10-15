@@ -6,7 +6,8 @@
       @header-msg="onHeaderMsg"
       :carousel_model="carousel_model"
     />
-    <router-view ref="content" />
+    <router-view name="breadcrumb" ref="breadcrumb"></router-view>
+    <router-view ref="content" @rendered="onContentRendered" />
     <router-view name="footer" ref="footer" />
   </div>
 </template>
@@ -23,6 +24,14 @@ export default {
     }
   },
   mixins: [VscMixins.NavMenu, FrameMixins.VideoIndex],
+  computed: {
+    headerFixedHeight() {
+      return this.$refs.header.fixedHeight;
+    }
+  },
+  mounted() {
+    console.log(this.$options.name + " mounted.");
+  },
   methods: {
     onHeaderMsg(msg, params) {
       console.log(this.$options.name + "::onHeaderMsg():" + msg);
@@ -46,12 +55,11 @@ export default {
       console.log("onNavClick from:" + JSON.stringify(this.current_nav));
       if (this.$store.state.nav_model.nav_index !== navIndex) {
         this.$store.commit("setCurrentNavCategory", navIndex);
-
+        if (this.$refs.breadcrumb) {
+          this.$refs.breadcrumb.onBreadCrumbLoad(navIndex);
+        }
         // 类目有变化，如果当前页面是列表页，则不跳转，只根据类别刷新列表内容。
-        if (
-          this.$refs.content.$options.name === "SimpleVideoListFrame" &&
-          this.$router.currentRoute.name === navItem.path_name
-        ) {
+        if (this.$router.currentRoute.name === navItem.path_name) {
           // // 如有必要，此处的回调方式，可以改成触发消息的方式。
           // this.$refs.content.$emit("nav-changed", navItem, this.current_nav);
           this.$refs.content.onHeaderMsg(
@@ -70,6 +78,15 @@ export default {
           path_name: navItem.path_name,
           data: navItem.id
         });
+      }
+    },
+    onContentRendered(ref, params) {
+      console.log("onContentRendered():" + ref);
+      // 如果存在导航栏数据，则刷新面包屑。
+      if (this.current_nav.name) {
+        this.$refs.breadcrumb.onBreadCrumbLoad(
+          this.$store.state.nav_model.nav_index
+        );
       }
     }
   }

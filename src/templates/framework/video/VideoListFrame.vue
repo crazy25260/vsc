@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <BreadCrumb></BreadCrumb>
+  <div class="video-list">
+    <!--    <BreadFrame></BreadFrame>-->
     <BlogCardList
       :paddingTop="with_carousel ? 1.5 : 0.5"
       :blogCards="list_model"
@@ -13,17 +13,17 @@
 
 <script>
 import BlogCardList from "@/components-depository/common/infinite-scroll/BlogCardList";
-import BreadCrumb from "@/components-depository/common/BreadCrumb";
 import Pagination from "@/components/Pagination";
 
 import VscMixins from "@/mixins/vsc-mixins";
 import FrameMixins from "@/mixins/frame-mixins";
+// import BreadFrame from "@/templates/framework/base/BreadFrame";
 
 export default {
   name: "SimpleVideoListFrame",
   components: {
+    // BreadFrame,
     BlogCardList,
-    BreadCrumb,
     Pagination
   },
   props: {
@@ -37,8 +37,19 @@ export default {
     FrameMixins.ContentFrame,
     FrameMixins.VideoList,
     VscMixins.Pagination
-  ]
+  ],
+  mounted() {
+    console.log(
+      this.$options.name +
+        " mounted. this.$parent.headerFixedHeight:" +
+        this.$parent.headerFixedHeight
+    );
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.video-list {
+  margin-top: 0;
+}
+</style>

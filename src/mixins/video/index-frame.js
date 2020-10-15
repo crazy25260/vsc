@@ -1,28 +1,26 @@
 import { loadIndexModel } from "@/api/data/index-model";
+import { vsc_common } from "@/api/vsc-common";
 
 const VideoIndex = {
   data() {
     return {
-      frame_name: "VideoIndex",
       brand_model: {},
       carousel_model: [],
       nav_model: []
     };
   },
   created() {
-    if (!this.$store.state.frame_pool.get(this.frame_name)) {
-      this.$store.state.frame_pool.set(this.frame_name, {
-        frame_name: this.frame_name,
-        nav_changed_binded: false
-      });
-    }
-
     loadIndexModel().then(r => this.renderIndex(r));
-    this.$store.state.path_trace = [];
-    this.$store.state.path_trace.push({
-      path: this.$router.currentRoute.path,
-      name: "首页"
-    });
+  },
+  watch: {
+    nav_model: function(newData, oldData) {
+      if (
+        newData.nav_categories.length > 0 &&
+        !vsc_common.isUndefined(this.$refs.breadcrumb)
+      ) {
+        this.$refs.breadcrumb.onBreadCrumbLoad(newData.nav_index);
+      }
+    }
   },
   methods: {
     renderIndex(r) {

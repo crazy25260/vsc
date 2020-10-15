@@ -14,8 +14,7 @@ const store = new Vuex.Store({
     ],
     nav_model: {},
     current_video_data: null,
-    path_trace: [],
-    frame_pool: new Map()
+    path_trace: []
   },
   mutations: {
     init(state, storeModel) {

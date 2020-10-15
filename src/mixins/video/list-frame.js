@@ -9,20 +9,11 @@ const VideoList = {
   },
   data() {
     return {
-      frame_name: "VideoList",
       list_model: []
     };
   },
   created() {
-    if (!this.$store.state.frame_pool.get(this.frame_name)) {
-      this.$store.state.frame_pool.set(this.frame_name, {
-        frame_name: this.frame_name,
-        nav_changed_binded: false
-      });
-    }
-
     this.list_model = [];
-
     loadCardListModel(this.current_nav.id, 1).then(r => {
       this.renderList(r);
     });
@@ -38,23 +29,10 @@ const VideoList = {
       });
     });
   },
-  // mounted() {
-  //   this.$refs.carousel_nav.onFrameInitialized(
-  //     this.$store.state.frame_pool.get(this.frame_name)
-  //   );
-  // },
   methods: {
     renderList(r) {
       this.list_model = r.data;
-      this.$store.state.path_trace = [];
-      this.$store.state.path_trace.push({
-        path: "/simple",
-        name: "首页"
-      });
-      this.$store.state.path_trace.push({
-        path: this.$router.currentRoute.path,
-        name: this.current_nav.name
-      });
+      this.$emit("rendered", this.$options.name);
     },
     onVideoCoverClick(params) {
       this.$store.commit("navigate", {

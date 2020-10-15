@@ -90,6 +90,9 @@ export default {
     return {
       year: new Date().getFullYear()
     };
+  },
+  mounted() {
+    console.log(this.$options.name + " mounted.");
   }
 };
 </script>
