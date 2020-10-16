@@ -427,7 +427,7 @@ let SimpleVideoIndexData = {
   ],
   nav_model: {
     nav_categories: [
-      { id: "30", name: "推荐", path: "/simple", path_name: "simple" },
+      { id: "30", name: "推荐", path: "/simple", path_name: "simple-index" },
       {
         id: "31",
         name: "电影",

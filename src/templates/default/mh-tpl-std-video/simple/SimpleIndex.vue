@@ -71,7 +71,7 @@ export default {
         this.$store.commit("navigate", {
           router: this.$router,
           path_name: navItem.path_name,
-          data: navItem.id
+          data: navItem
         });
       }
     },

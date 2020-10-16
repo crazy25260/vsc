@@ -174,6 +174,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/material-kit/variables";
+
 .md-toolbar {
   margin-bottom: 0;
 }
@@ -186,13 +188,17 @@ export default {
   padding-left: 1rem;
 }
 
+.el-drawer__close-btn {
+  color: white;
+}
+
 .search-pane {
-  background-color: lightblue;
+  background-color: $brand-info;
   width: 100%;
 }
 
 .md-list.md-theme-default {
-  background-color: lightblue;
+  background-color: $brand-info;
   color: white;
   .md-list-item-text {
     color: white;
