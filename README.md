@@ -20,7 +20,7 @@ VSC is a Front-Web Project for Station Cluster based on Vue.js.<br>
 
  List Page | Play Page |
 | --- | --- |
-| ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot1.png) | ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot2.png)
+| ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot1.jpg) | ![Product Png](http://media.meyho.cn/image/2020/vsc/github/resource/snapshot2.jpg)
 
 #### Install & Local run
 ```
