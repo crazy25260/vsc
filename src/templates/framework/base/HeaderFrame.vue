@@ -86,12 +86,6 @@ export default {
     };
   },
   computed: {
-    fixedHeight() {
-      return (
-        this.$refs.brand_navbar.$el.offsetHeight +
-        this.$refs.navbar.$el.offsetHeight
-      );
-    },
     headFixedBackground() {
       return {
         paddingTop: this.fixed_height + "px"
@@ -103,7 +97,6 @@ export default {
     this.autoAdjustFixedBackGround();
     window.onresize = () => {
       return (() => {
-        // this.autoAdjustFixedBackGround();
         let newPreviewNum = document.body.clientWidth > 992 ? 3 : 1;
         if (
           this.showCarousel &&
@@ -116,22 +109,11 @@ export default {
   },
   watch: {
     showCarousel: function(newShowCarousel, oldShowCarousel) {
-      console.log(
-        "======> showCarousel changed!!!!" +
-          oldShowCarousel +
-          "->" +
-          newShowCarousel
-      );
       this.autoAdjustFixedBackGround();
     }
   },
   methods: {
     autoAdjustFixedBackGround() {
-      console.log("fixedHeight:" + this.fixedHeight);
-      console.log(
-        "brand_navbar height:" + this.$refs.brand_navbar.$el.offsetHeight
-      );
-      console.log("navbar height:" + this.$refs.navbar.$el.offsetHeight);
       this.fixed_height =
         this.$refs.brand_navbar.$el.offsetHeight +
         this.$refs.navbar.$el.offsetHeight;

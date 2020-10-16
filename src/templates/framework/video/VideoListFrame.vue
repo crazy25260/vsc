@@ -37,14 +37,7 @@ export default {
     FrameMixins.ContentFrame,
     FrameMixins.VideoList,
     VscMixins.Pagination
-  ],
-  mounted() {
-    console.log(
-      this.$options.name +
-        " mounted. this.$parent.headerFixedHeight:" +
-        this.$parent.headerFixedHeight
-    );
-  }
+  ]
 };
 </script>
 

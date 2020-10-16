@@ -24,11 +24,6 @@ export default {
     }
   },
   mixins: [VscMixins.NavMenu, FrameMixins.VideoIndex],
-  computed: {
-    headerFixedHeight() {
-      return this.$refs.header.fixedHeight;
-    }
-  },
   mounted() {
     console.log(this.$options.name + " mounted.");
   },

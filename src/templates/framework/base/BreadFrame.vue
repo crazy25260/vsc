@@ -29,8 +29,6 @@ export default {
   },
   methods: {
     onBreadCrumbLoad(navIndex) {
-      console.log("2222222:" + this.$router.currentRoute.path);
-      console.log("3333333:" + navIndex);
       let navItem = this.$store.state.nav_model.nav_categories[navIndex];
       this.$store.state.path_trace = [
         {
