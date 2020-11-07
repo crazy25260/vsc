@@ -495,7 +495,7 @@ let SimpleVideoRelatedData = {
 };
 
 export default {
-  "get|/api/model/index": option => {
+  "get|/api/model/front/index": option => {
     return {
       status: 200,
       message: "success",

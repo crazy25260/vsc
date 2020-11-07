@@ -1,12 +1,18 @@
 <template>
-  <div class="scroll-wrapper" ref="blog_card_list" :class="{ 'index-list': isIndex }">
+  <div
+    class="scroll-wrapper"
+    ref="blog_card_list"
+    :class="{ 'index-list': isIndex }"
+  >
     <div
       class="md-layout md-gutter infinite-list-wrapper"
       v-infinite-scroll="loadMore"
       infinite-scroll-disabled="busy"
       infinite-scroll-immediate="false"
       infinite-scroll-distance="400"
+      ref="infinite_list"
     >
+      <div class="list-space"></div>
       <div
         v-for="(blog_card, index) in blogCards"
         :key="index"
@@ -39,26 +45,6 @@
         </blog-card>
       </div>
     </div>
-    <!--    <p v-if="loading">-->
-    <!--      <el-row>-->
-    <!--        <el-col :span="24">-->
-    <!--          <div class="grid-content bg-purple-dark">-->
-    <!--            加载中，请稍后...-->
-    <!--          </div></el-col-->
-    <!--        >-->
-    <!--      </el-row>-->
-    <!--    </p>-->
-    <!--    <p v-if="noMore">-->
-    <!--      <el-backtop-->
-    <!--        target=".scroll-wrapper"-->
-    <!--        :bottom="40"-->
-    <!--        :visibility-height="2000"-->
-    <!--      >-->
-    <!--        <div>-->
-    <!--          回顶-->
-    <!--        </div>-->
-    <!--      </el-backtop>-->
-    <!--    </p>-->
   </div>
 </template>
 
@@ -97,7 +83,16 @@ export default {
     busy() {
       // 第一次达加载完毕后，滚动条，应该回归到顶部。--  这个体验需要优化。
       return this.blogCards.length >= 10;
+    },
+    contentSpace() {
+      console.log("11111:" + this.$refs.blog_card_list.clientWidth);
+      console.log("22222:" + this.$refs.infinite_list.clientWidth);
+      let space = this.$refs.blog_card_list.clientWidth - this.$refs.infinite_list.clientWidth;
+      return space;
     }
+  },
+  mounted() {
+    console.log("00000:" + this.contentSpace);
   },
   methods: {
     loadMore() {
@@ -124,5 +119,10 @@ export default {
 
 .index-list {
   border: 2px solid red;
+}
+
+.list-space {
+  background-color: yellow;
+  width: 100%;
 }
 </style>
