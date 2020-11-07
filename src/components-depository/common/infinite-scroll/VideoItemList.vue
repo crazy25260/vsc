@@ -14,7 +14,7 @@
     >
       <div class="list-space"></div>
       <div
-        v-for="(blog_card, index) in blogCards"
+        v-for="(videoCover, index) in videoItems"
         :key="index"
         class="md-layout-item md-small-size-100 md-medium-size-25 md-large-size-20 md-xlarge-size-15"
       >
@@ -22,23 +22,23 @@
           card-plain
           :shadow-normal="false"
           :no-colored-shadow="false"
-          :card-image="blog_card.thumbPic"
+          :card-image="videoCover.cover_image"
           @card-click="onCardClicked"
-          :card_data="blog_card"
+          :card_data="videoCover"
           :top_space="paddingTop"
         >
           <template slot="cardTitleHeader">
-            {{ blog_card.cardTitleHeader }}
+            {{ videoCover.cover_title_minor }}
           </template>
           <template slot="cardContent">
             <h6 class="card-category text-info">
-              添加时间： {{ blog_card.pubTime }}
+              添加时间： {{ videoCover.cover_time }}
             </h6>
             <h4 class="card-title">
-              <a href="javascript:void(0)">{{ blog_card.name }}</a>
+              <a href="javascript:void(0)">{{ videoCover.cover_title }}</a>
             </h4>
             <p class="card-description">
-              {{ blog_card.desc }}
+              {{ videoCover.cover_desc }}
               <a href="javascript:void(0)">更多</a>
             </p>
           </template>
@@ -60,7 +60,7 @@ export default {
       type: Number,
       default: 0.5
     },
-    blogCards: {
+    videoItems: {
       type: Array,
       default: function() {
         return [];
@@ -82,7 +82,7 @@ export default {
   computed: {
     busy() {
       // 第一次达加载完毕后，滚动条，应该回归到顶部。--  这个体验需要优化。
-      return this.blogCards.length >= 10;
+      return this.videoItems.length >= 10;
     },
     contentSpace() {
       console.log("11111:" + this.$refs.blog_card_list.clientWidth);
@@ -99,6 +99,7 @@ export default {
       this.$eventBus.$emit("more-data");
     },
     onCardClicked(params) {
+      console.log("1111111111==>" + JSON.stringify(params));
       this.$store.commit("setCurrentVideoData", params.card_data);
       this.$emit("video-cover-click", params);
     }

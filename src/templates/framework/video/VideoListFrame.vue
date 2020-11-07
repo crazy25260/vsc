@@ -1,18 +1,18 @@
 <template>
   <div class="video-list">
     <!--    <BreadFrame></BreadFrame>-->
-    <BlogCardList
+    <VideoItemList
       :paddingTop="with_carousel ? 1.5 : 0.5"
-      :blogCards="list_model"
+      :videoItems="list_model"
       @video-cover-click="onVideoCoverClick"
-    ></BlogCardList>
+    ></VideoItemList>
     <pagination v-model="infoPagination" :page-count="3" @input="onPageChange">
     </pagination>
   </div>
 </template>
 
 <script>
-import BlogCardList from "@/components-depository/common/infinite-scroll/BlogCardList";
+import VideoItemList from "@/components-depository/common/infinite-scroll/VideoItemList";
 import Pagination from "@/components/Pagination";
 
 import VscMixins from "@/mixins/vsc-mixins";
@@ -23,7 +23,7 @@ export default {
   name: "SimpleVideoListFrame",
   components: {
     // BreadFrame,
-    BlogCardList,
+    VideoItemList,
     Pagination
   },
   props: {

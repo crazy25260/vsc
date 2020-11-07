@@ -224,109 +224,111 @@ const videoPool = [
 
 const videoCoverPool = [
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/hanzhan.png",
-    name: "捍战",
-    id: "1",
-    url:
+    cover_title: "捍战",
+    link_id: "1",
+    link_url:
       "http://media.meyho.cn/video/2020/vsc/sample/video-list/recommend/hanzhan/hanzhan.m3u8",
-    desc:
+    cover_desc:
       "本故事根据真实事件改编。故事里的捍战小队是由华人组成的非洲某保镖公司的主力成员，他们不仅每天要面对和远方亲人的骨肉分离还要面对执行任务时的生死考验...",
-    cardTitleHeader: "捍战",
-    pubTime: "2020-08-14 09:10:12"
+    cover_title_minor: "捍战",
+    cover_time: "2020-08-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/huamulan-pre.jpg",
-    name: "花木兰",
-    id: "2",
-    desc:
+    cover_title: "花木兰",
+    link_id: "2",
+    cover_desc:
       "在古代中国，一位年轻的女子为了救她的父亲假扮成男装代父从军。在穿越中国广袤土地的壮丽征程中，她从紧张的训练和战争中存活下来，发现...",
-    cardTitleHeader: "花木兰",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title_minor: "花木兰",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/laker-james.png",
-    name: "湖人再胜掘金总分2-0",
-    id: "3",
-    desc: "浓眉压哨三分绝杀！湖人再胜掘金总分2-0，詹姆斯26+11",
-    cardTitleHeader: "湖人再胜掘金总分2-0",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title: "湖人再胜掘金总分2-0",
+    link_id: "3",
+    cover_desc: "浓眉压哨三分绝杀！湖人再胜掘金总分2-0，詹姆斯26+11",
+    cover_title_minor: "湖人再胜掘金总分2-0",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/jiangziya.png",
-    name: "《姜子牙》“苏妲己”首亮相！",
-    id: "4",
-    desc: "《姜子牙》“苏妲己”首亮相！每一个无辜之人都不该“被牺牲",
-    cardTitleHeader: "《姜子牙》“苏妲己”首亮相",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title: "《姜子牙》“苏妲己”首亮相！",
+    link_id: "4",
+    cover_desc: "《姜子牙》“苏妲己”首亮相！每一个无辜之人都不该“被牺牲",
+    cover_title_minor: "《姜子牙》“苏妲己”首亮相",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/babai.png",
-    name: "八佰",
-    id: "5",
-    desc: "《八佰》高燃预告片，誓以我命固我土！",
-    cardTitleHeader: "八佰",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title: "八佰",
+    link_id: "5",
+    cover_desc: "《八佰》高燃预告片，誓以我命固我土！",
+    cover_title_minor: "八佰",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/MrMonster.png",
-    name: "怪物先生",
-    id: "6",
-    desc:
+    cover_title: "怪物先生",
+    link_id: "6",
+    cover_desc:
       "有些奇怪的事情一直存在，你以为是巧合，或编个理由让它合理，其实，是因为你们不想承认…… ",
-    cardTitleHeader: "怪物先生",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title_minor: "怪物先生",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/zhengtu.png",
-    name: "征途",
-    id: "7",
-    desc:
+    cover_title: "征途",
+    link_id: "7",
+    cover_desc:
       "故事发生在虚构的中原大陆。十国之中，南赵国与北燕国比邻而居。为了防御日益强大的北燕...",
-    cardTitleHeader: "征途",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title_minor: "征途",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/cq-jhtl-1-001.png",
-    name: "重启之极海听雷第一季",
-    id: "8",
-    desc:
+    cover_title: "重启之极海听雷第一季",
+    link_id: "8",
+    cover_desc:
       "该剧讲述吴邪、王胖子、张起灵铁三角十年之约结束退隐雨村。有一天吴邪忽然收到一条疑似三叔吴三省发来的短信...",
-    cardTitleHeader: "重启之极海听雷",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title_minor: "重启之极海听雷",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/250kgmodel.png",
-    name: "500斤模特",
-    id: "9",
-    desc: "讲述一个500斤的大胖子女模特的故事，喜欢的就点进来看...",
-    cardTitleHeader: "500斤肥女模特",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title: "500斤模特",
+    link_id: "9",
+    cover_desc: "讲述一个500斤的大胖子女模特的故事，喜欢的就点进来看...",
+    cover_title_minor: "500斤肥女模特",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic:
+    cover_image:
       "http://media.meyho.cn/image/2020/vsc/sample/video-list-cover/recommend/laoliang.png",
-    name: "老梁讲套路",
-    id: "10",
-    desc: "社会艰险套路多，老梁帮你来击破。发刊词-超清720P...",
-    cardTitleHeader: "老梁系列",
-    pubTime: "2020-07-14 09:10:12"
+    cover_title: "老梁讲套路",
+    link_id: "10",
+    cover_desc: "社会艰险套路多，老梁帮你来击破。发刊词-超清720P...",
+    cover_title_minor: "老梁系列",
+    cover_time: "2020-07-14 09:10:12"
   },
   {
-    thumbPic: "http://media.meyho.cn/image/movie/youtube/202010/djz-lszy.png",
-    name: "大决战之辽沈战役",
-    id: "11",
-    desc: "【大决战—辽沈战役】 1991年 中国经典怀旧电影 Chinese classical movie",
-    cardTitleHeader: "经典怀旧-大决战",
-    pubTime: "2020-10-14 16:10:12"
+    cover_image:
+      "http://media.meyho.cn/image/movie/youtube/202010/djz-lszy.png",
+    cover_title: "大决战之辽沈战役",
+    link_id: "11",
+    cover_desc:
+      "【大决战—辽沈战役】 1991年 中国经典怀旧电影 Chinese classical movie",
+    cover_title_minor: "经典怀旧-大决战",
+    cover_time: "2020-10-14 16:10:12"
   }
 ];
 

@@ -9,11 +9,11 @@
       >
         <!-- here you can add your content for tab-content -->
         <template slot="tab-pane-1">
-          <BlogCardList
+          <VideoItemList
             :paddingTop="1"
             @video-cover-click="onCardClicked"
-            :blogCards="related_model.related_list"
-          ></BlogCardList>
+            :videoItems="related_model.related_list"
+          ></VideoItemList>
         </template>
         <template slot="tab-pane-2">
           {{ related_model.comment }}
@@ -31,12 +31,12 @@
 
 <script>
 import { Tabs } from "@/components";
-import BlogCardList from "@/components-depository/common/infinite-scroll/BlogCardList";
+import VideoItemList from "@/components-depository/common/infinite-scroll/VideoItemList";
 export default {
   name: "VideoRelatedTab",
   components: {
     Tabs,
-    BlogCardList
+    VideoItemList
   },
   props: {
     related_model: {

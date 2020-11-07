@@ -25,13 +25,13 @@ const VideoPlay = {
     // 	"cardTitleHeader": "花木兰",
     // 	"pubTime": "2020-07-14 09:10:12"
     // }
-    if (vsc_common.isUndefined(this.$route.params.name)) {
+    if (vsc_common.isUndefined(this.$route.params.cover_title)) {
       loadPlayModel(this.$route.query.video_id).then(r => this.renderPlay(r));
       loadRelatedModel().then(r => this.renderRelated(r));
       return;
     }
 
-    loadPlayModel(this.$route.params.id).then(r => this.renderPlay(r));
+    loadPlayModel(this.$route.params.link_id).then(r => this.renderPlay(r));
     loadRelatedModel().then(r => this.renderRelated(r));
   },
   methods: {
@@ -85,7 +85,7 @@ const VideoPlay = {
     // 同页面内切换视频进行播放，即点击相关的视频进行播放。
     innerSwitchVideo(card_data) {
       console.log("77777====>" + JSON.stringify(card_data));
-      loadPlayModel(card_data.id).then(r => this.renderPlay(r));
+      loadPlayModel(card_data.link_id).then(r => this.renderPlay(r));
     }
   }
 };
