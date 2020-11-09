@@ -21,8 +21,9 @@ const VideoRecommended = {
   },
   methods: {
     renderRecommendedContent(r) {
-      let indexModel = r.data;
-      this.renderList({ data: indexModel.index_list });
+      let recommendedModel = r.recommended_model;
+      console.log("5555555555:" + JSON.stringify(recommendedModel));
+      this.renderList({ data: recommendedModel.index_list });
       this.$emit("rendered", this.$options.name);
     },
     renderList(r) {

@@ -24,7 +24,7 @@ const VideoIndex = {
   },
   methods: {
     renderIndex(r) {
-      let indexModel = r.data;
+      let indexModel = r;
       this.brand_model = indexModel.brand_model;
       this.carousel_model = indexModel.carousel_pics;
       this.nav_model = indexModel.nav_model;

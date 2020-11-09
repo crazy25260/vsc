@@ -497,13 +497,13 @@ let SimpleVideoRelatedData = {
 };
 
 export default {
-  "get|/api/model/front/index": option => {
-    return {
-      status: 200,
-      message: "success",
-      data: SimpleVideoIndexData
-    };
-  },
+  // "get|/api/model/front/index": option => {
+  //   return {
+  //     status: 200,
+  //     message: "success",
+  //     data: SimpleVideoIndexData
+  //   };
+  // },
   "get|/api/model/play": option => {
     console.log("get|/api/model/play==>" + JSON.stringify(option));
     let video_id = "999";

@@ -7,6 +7,7 @@ async function loadIndexModel() {
     domain: window.location.host
   };
 
+  // let url = "http://localhost:8180/api/model/front/index?" + qs.stringify(params);
   let url = "/api/model/front/index?" + qs.stringify(params);
   await axios
     .get(url)
