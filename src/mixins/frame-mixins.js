@@ -22,6 +22,7 @@ const ContentFrame = {
       console.log("onSlideDrawerShow()");
     },
     onPageChange(item) {
+      console.log("777777777777:" + JSON.stringify(this.current_nav));
       this.onLoadPage(this.current_nav, item);
     }
   }

@@ -453,7 +453,13 @@ let SimpleVideoIndexData = {
     nav_index: 0
   },
   recommended_model: {
-    index_list: SimpleVideoCardList
+    video_list: SimpleVideoCardList,
+    page_count: {
+      page_num:
+        SimpleVideoCardList.length / 20 +
+        (SimpleVideoCardList.length % 20 > 0 ? 1 : 0),
+      page_item_num: SimpleVideoCardList.length
+    }
   }
 };
 
