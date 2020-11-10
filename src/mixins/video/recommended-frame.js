@@ -22,12 +22,11 @@ const VideoRecommended = {
   methods: {
     renderRecommendedContent(r) {
       let recommendedModel = r.recommended_model;
-      console.log("5555555555:" + JSON.stringify(recommendedModel));
-      this.renderList({ data: recommendedModel.index_list });
+      this.renderList(recommendedModel.index_list);
       this.$emit("rendered", this.$options.name);
     },
     renderList(r) {
-      this.list_model = r.data;
+      this.list_model = r;
     },
     onVideoCoverClick(params) {
       this.$store.commit("navigate", {

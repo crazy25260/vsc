@@ -21,17 +21,18 @@ const VideoList = {
     this.$eventBus.$on("more-data", p => {
       //这里最好用箭头函数，不然this指向有问题
       this.list_model.push({
-        thumbPic: require("@/assets/img/bg5.jpg"),
-        name: "push",
-        desc: "push",
-        cardTitleHeader: "push",
-        pubTime: "2020-07-14 09:10:12"
+        cover_image: require("@/assets/img/bg5.jpg"),
+        cover_title: "push",
+        cover_desc: "push",
+        cover_title_minor: "push",
+        cover_time: "2020-07-14 09:10:12"
       });
     });
   },
   methods: {
     renderList(r) {
-      this.list_model = r.data;
+      console.log("5555555555:" + JSON.stringify(r));
+      this.list_model = r;
       this.$emit("rendered", this.$options.name);
     },
     onVideoCoverClick(params) {

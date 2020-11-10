@@ -63,7 +63,7 @@ async function loadCardListModel(cate_id, page) {
     page: page
   };
 
-  let url = "/api/model/video_list?" + qs.stringify(params);
+  let url = "/api/model/front/video_list?" + qs.stringify(params);
   await axios
     .get(url)
     .then(function(response) {

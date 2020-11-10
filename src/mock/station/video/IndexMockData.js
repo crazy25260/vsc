@@ -452,7 +452,9 @@ let SimpleVideoIndexData = {
     ],
     nav_index: 0
   },
-  index_list: SimpleVideoCardList
+  recommended_model: {
+    index_list: SimpleVideoCardList
+  }
 };
 
 let SimpleVideoPlayData = {
@@ -496,14 +498,10 @@ let SimpleVideoRelatedData = {
   }
 };
 
-export default {
-  // "get|/api/model/front/index": option => {
-  //   return {
-  //     status: 200,
-  //     message: "success",
-  //     data: SimpleVideoIndexData
-  //   };
-  // },
+let mockData = {
+  "get|/api/model/front/index": option => {
+    return SimpleVideoIndexData;
+  },
   "get|/api/model/play": option => {
     console.log("get|/api/model/play==>" + JSON.stringify(option));
     let video_id = "999";
@@ -533,7 +531,7 @@ export default {
       data: SimpleVideoRelatedData
     };
   },
-  "get|/api/model/video_list": option => {
+  "get|/api/model/front/video_list": option => {
     let cate_id = "30";
     let page = "1";
     if ("/api/model/video_list?" !== option.url) {
@@ -567,10 +565,11 @@ export default {
       cardList = SimpleVideoCardList3;
     }
 
-    return {
-      status: 200,
-      message: "success",
-      data: cardList
-    };
+    return cardList;
   }
 };
+
+let exportData = {};
+// exportData = mockData;
+
+export default exportData;

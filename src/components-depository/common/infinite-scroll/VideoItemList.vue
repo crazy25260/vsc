@@ -82,7 +82,7 @@ export default {
   computed: {
     busy() {
       // 第一次达加载完毕后，滚动条，应该回归到顶部。--  这个体验需要优化。
-      return this.videoItems.length >= 10;
+      return this.videoItems.length >= 20;
     },
     contentSpace() {
       console.log("11111:" + this.$refs.blog_card_list.clientWidth);
