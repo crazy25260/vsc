@@ -508,10 +508,10 @@ let mockData = {
   "get|/api/model/front/index": option => {
     return SimpleVideoIndexData;
   },
-  "get|/api/model/play": option => {
-    console.log("get|/api/model/play==>" + JSON.stringify(option));
+  "get|/api/model/front/play": option => {
+    console.log("get|/api/model/front/play==>" + JSON.stringify(option));
     let video_id = "999";
-    if ("/api/model/play?" !== option.url) {
+    if ("/api/model/front/play?" !== option.url) {
       video_id = vsc_common.getUrlKey("video_id", option.url);
     }
 

@@ -12,7 +12,7 @@
           <VideoItemList
             :paddingTop="1"
             @video-cover-click="onCardClicked"
-            :videoItems="related_model.related_list"
+            :videoItems="related_model.related_video_covers"
           ></VideoItemList>
         </template>
         <template slot="tab-pane-2">

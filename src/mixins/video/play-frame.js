@@ -25,26 +25,28 @@ const VideoPlay = {
     // 	"cardTitleHeader": "花木兰",
     // 	"pubTime": "2020-07-14 09:10:12"
     // }
-    if (vsc_common.isUndefined(this.$route.params.cover_title)) {
-      loadPlayModel(this.$route.query.video_id).then(r => this.renderPlay(r));
-      loadRelatedModel().then(r => this.renderRelated(r));
-      return;
-    }
+    // if (vsc_common.isUndefined(this.$route.params.cover_title)) {
+    //   loadPlayModel(this.$route.query.video_id).then(r => this.renderPlay(r));
+    //   loadRelatedModel().then(r => this.renderRelated(r));
+    //   return;
+    // }
 
-    loadPlayModel(this.$route.params.link_id).then(r => this.renderPlay(r));
-    loadRelatedModel().then(r => this.renderRelated(r));
+    loadPlayModel(this.$route.params.link_id).then(r => {
+      this.renderPlay(r);
+      this.renderRelated(r);
+    });
+    // loadRelatedModel().then(r => this.renderRelated(r));
   },
   methods: {
-    renderPlay(r) {
-      let playModel = r.data;
+    renderPlay(playModel) {
       this.play_video = playModel.play_video;
-
+      // console.log("555555555:" + JSON.stringify(this.$store.state.path_trace.length) + " | " + JSON.stringify(this.play_video));
       if (this.$store.state.path_trace.length > 2) {
         this.$store.state.path_trace.pop();
       } else if (this.$store.state.path_trace.length === 2) {
         this.$store.state.path_trace.push({
           path: this.$router.currentRoute.name,
-          name: playModel.play_video.name
+          name: this.play_video.video_name
         });
       } else {
         this.$store.state.path_trace = [
@@ -54,16 +56,16 @@ const VideoPlay = {
           },
           {
             path: this.$router.currentRoute.name,
-            name: playModel.play_video.name
+            name: this.play_video.video_name
           }
         ];
       }
 
       this.$emit("video-data-ready");
     },
-    renderRelated(r) {
-      let relatedModel = r.data;
-      this.related_model = relatedModel.related_model;
+    renderRelated(playModel) {
+      this.related_model = playModel.video_related;
+      console.log("555555555:" + JSON.stringify(this.$store.state.path_trace.length) + " | " + JSON.stringify(this.related_model));
       this.$emit("video-related-ready");
     },
     onRelatedClicked(params) {

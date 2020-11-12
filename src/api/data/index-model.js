@@ -26,7 +26,7 @@ async function loadPlayModel(video_id) {
     video_id: video_id
   };
 
-  let url = "/api/model/play?" + qs.stringify(params);
+  let url = "/api/model/front/play?" + qs.stringify(params);
   await axios
     .get(url)
     .then(function(response) {

@@ -15,15 +15,15 @@
       <div class="md-layout">
         <div class="md-layout-item">
           <div class="tim-typo">
-            <span class="md-body-2">{{ video_data.name }}</span>
+            <span class="md-body-2">{{ video_data.video_name }}</span>
             <small
-              >【{{ video_data.playFromInfos[active_line].sourceName }}】</small
+              >【{{ video_data.routes[active_route].route_name }}】</small
             >
           </div>
         </div>
       </div>
       <VideoLines
-        :lines="video_data.playFromInfos"
+        :lines="video_data.routes"
         :checked="checked_line"
         @video_line_change="onLineChange"
         ref="videolines"
@@ -61,23 +61,23 @@ export default {
     return {
       player_width: 800,
       player_height: 600,
-      active_line: 0
+      active_route: 0
     };
   },
   computed: {
     video_data() {
-      if (this.play_video && this.play_video.playFromInfos) {
+      if (this.play_video && this.play_video.routes) {
         return this.play_video;
       }
 
       return {
         name: "VSC视频",
-        thumbPic: "http://media.meyho.cn/image/2020/vsc/sample/250kgmodel.png",
-        playFromInfos: [
+        thumbnail: "http://media.meyho.cn/image/2020/vsc/sample/250kgmodel.png",
+        routes: [
           {
-            playUrl:
+            route_url:
               "http://media.meyho.cn/video/2020/vsc/sample/250kgmodel/250kgmodel.m3u8",
-            sourceName: "VSC默认线路",
+            route_name: "VSC默认线路",
             videoRemark: "480p"
           }
         ]
@@ -107,7 +107,7 @@ export default {
       };
     },
     checked_line() {
-      return this.video_data.playFromInfos[this.active_line].sourceName;
+      return this.video_data.routes[this.active_route].route_name;
     }
   },
   created() {
@@ -146,9 +146,10 @@ export default {
   },
   methods: {
     onLineChange(line, index) {
+      console.log("666666666666:" + JSON.stringify(line));
       if (this.$refs.player) {
-        this.$refs.player.onSwitchSource(line.playUrl);
-        this.active_line = index;
+        this.$refs.player.onSwitchSource(line.route_url);
+        this.active_route = index;
       }
 
       if (this.$refs.videolines) {
@@ -159,13 +160,13 @@ export default {
       this.$refs.player.pause();
     },
     fillData() {
-      this.setTitle(this.video_data.name);
-      if (!vsc_common.isUndefined(this.video_data.playFromInfos)) {
-        this.videoOptions.poster = this.video_data.playFromInfos[0].playUrl;
+      this.setTitle(this.video_data.video_name);
+      if (!vsc_common.isUndefined(this.video_data.routes)) {
+        this.videoOptions.poster = this.video_data.routes[0].route_url;
         // 切换封面
-        this.$refs.player.setVideoPoster(this.video_data.thumbPic);
+        this.$refs.player.setVideoPoster(this.video_data.thumbnail);
         // 切换视频播放源
-        this.onLineChange(this.video_data.playFromInfos[0], this.active_line);
+        this.onLineChange(this.video_data.routes[0], this.active_route);
       }
     },
     setTitle(title) {
