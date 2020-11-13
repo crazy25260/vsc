@@ -40,7 +40,6 @@ const VideoPlay = {
   methods: {
     renderPlay(playModel) {
       this.play_video = playModel.play_video;
-      // console.log("555555555:" + JSON.stringify(this.$store.state.path_trace.length) + " | " + JSON.stringify(this.play_video));
       if (this.$store.state.path_trace.length > 2) {
         this.$store.state.path_trace.pop();
       } else if (this.$store.state.path_trace.length === 2) {
@@ -65,7 +64,6 @@ const VideoPlay = {
     },
     renderRelated(playModel) {
       this.related_model = playModel.video_related;
-      console.log("555555555:" + JSON.stringify(this.$store.state.path_trace.length) + " | " + JSON.stringify(this.related_model));
       this.$emit("video-related-ready");
     },
     onRelatedClicked(params) {

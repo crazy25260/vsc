@@ -2,12 +2,12 @@
   <div>
     <md-radio
       v-model="radio"
-      :value="line.sourceName"
+      :value="line.route_name"
       v-for="(line, index) in lines"
       :key="index"
       @change="onLineChange(line, index)"
     >
-      {{ line.sourceName }} : {{ line.videoRemark }}</md-radio
+      {{ line.route_name }} : {{ line.route_desc }}</md-radio
     >
 
     <!--    <small>Model value: {{ radio }}</small>-->

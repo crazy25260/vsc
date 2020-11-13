@@ -7,11 +7,6 @@ const VideoRecommended = {
       page_count: { page_num: 0, page_item_num: 0 }
     };
   },
-  computed: {
-    page_num() {
-      return this.page_count.page_num;
-    }
-  },
   created() {
     loadIndexModel().then(r => this.renderRecommendedContent(r));
     this.$eventBus.$on("more-data", p => {

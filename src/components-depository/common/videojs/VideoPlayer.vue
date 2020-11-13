@@ -33,7 +33,8 @@ export default {
   },
   data() {
     return {
-      player: null
+      player: null,
+      player_ready: false
     };
   },
   created() {
@@ -60,6 +61,7 @@ export default {
         this.options,
         function onPlayerReady() {
           console.log("onPlayerReady", this);
+          this.player_ready = true;
         }
       );
     },

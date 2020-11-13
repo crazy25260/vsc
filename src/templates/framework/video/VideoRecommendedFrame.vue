@@ -36,12 +36,6 @@ export default {
       default: true
     }
   },
-  // computed: {
-  //   page_num() {
-  //     console.log("55555555555555:" + JSON.stringify(this.page_count));
-  //     return this.page_count.page_num;
-  //   }
-  // },
   mixins: [
     FrameMixins.BaseFrame,
     FrameMixins.ContentFrame,

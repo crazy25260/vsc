@@ -6,7 +6,11 @@
       :videoItems="list_model"
       @video-cover-click="onVideoCoverClick"
     ></VideoItemList>
-    <pagination v-model="infoPagination" :page-count="3" @input="onPageChange">
+    <pagination
+      v-model="infoPagination"
+      :page-count="page_num"
+      @input="onPageChange"
+    >
     </pagination>
   </div>
 </template>
@@ -17,7 +21,6 @@ import Pagination from "@/components/Pagination";
 
 import VscMixins from "@/mixins/vsc-mixins";
 import FrameMixins from "@/mixins/frame-mixins";
-// import BreadFrame from "@/templates/framework/base/BreadFrame";
 
 export default {
   name: "SimpleVideoListFrame",

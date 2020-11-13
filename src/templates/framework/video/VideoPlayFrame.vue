@@ -163,10 +163,19 @@ export default {
       this.setTitle(this.video_data.video_name);
       if (!vsc_common.isUndefined(this.video_data.routes)) {
         this.videoOptions.poster = this.video_data.routes[0].route_url;
-        // 切换封面
-        this.$refs.player.setVideoPoster(this.video_data.thumbnail);
-        // 切换视频播放源
-        this.onLineChange(this.video_data.routes[0], this.active_route);
+
+        // 如果this.player 还没有好 就延迟1秒再播放。
+        let delay = 0;
+        if (!this.$refs.player.player_ready) {
+          delay = 1000;
+        }
+
+        setTimeout(() => {
+          // 切换封面
+          this.$refs.player.setVideoPoster(this.video_data.thumbnail);
+          // 切换视频播放源
+          this.onLineChange(this.video_data.routes[0], this.active_route);
+        }, delay);
       }
     },
     setTitle(title) {

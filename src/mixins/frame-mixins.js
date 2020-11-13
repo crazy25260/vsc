@@ -5,6 +5,11 @@ import VideoList from "@/mixins/video/list-frame";
 import VideoPlay from "@/mixins/video/play-frame";
 
 const ContentFrame = {
+  computed: {
+    page_num() {
+      return this.page_count.page_num;
+    }
+  },
   methods: {
     onHeaderMsg(msg, param1, param2) {
       switch (msg) {
