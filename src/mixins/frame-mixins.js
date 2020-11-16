@@ -7,7 +7,10 @@ import VideoPlay from "@/mixins/video/play-frame";
 const ContentFrame = {
   computed: {
     page_num() {
-      return this.page_count.page_num;
+      if (this.page_count.page_num) {
+        return this.page_count.page_num;
+      }
+      return 1;
     }
   },
   methods: {
@@ -19,7 +22,7 @@ const ContentFrame = {
         case "nav-click":
           break;
         case "nav-changed":
-          this.onLoadPage(param1.id, 1);
+          this.onLoadPage(param1, 1);
           break;
       }
     },
@@ -27,7 +30,6 @@ const ContentFrame = {
       console.log("onSlideDrawerShow()");
     },
     onPageChange(item) {
-      console.log("777777777777:" + JSON.stringify(this.current_nav));
       this.onLoadPage(this.current_nav, item);
     }
   }

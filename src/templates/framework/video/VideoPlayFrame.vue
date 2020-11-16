@@ -70,8 +70,9 @@ export default {
         return this.play_video;
       }
 
+      console.log("33333333333333333:" + JSON.stringify(this.play_video));
       return {
-        name: "VSC视频",
+        video_name: "VSC视频",
         thumbnail: "http://media.meyho.cn/image/2020/vsc/sample/250kgmodel.png",
         routes: [
           {
@@ -170,6 +171,7 @@ export default {
           delay = 1000;
         }
 
+        console.log("555555555:" + JSON.stringify(this.video_data));
         setTimeout(() => {
           // 切换封面
           this.$refs.player.setVideoPoster(this.video_data.thumbnail);
