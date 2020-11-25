@@ -16,9 +16,7 @@
         <div class="md-layout-item">
           <div class="tim-typo">
             <span class="md-body-2">{{ video_data.video_name }}</span>
-            <small
-              >【{{ video_data.routes[active_route].route_name }}】</small
-            >
+            <small>【{{ video_data.routes[active_route].route_name }}】</small>
           </div>
         </div>
       </div>
@@ -70,7 +68,6 @@ export default {
         return this.play_video;
       }
 
-      console.log("33333333333333333:" + JSON.stringify(this.play_video));
       return {
         video_name: "VSC视频",
         thumbnail: "http://media.meyho.cn/image/2020/vsc/sample/250kgmodel.png",
@@ -147,7 +144,6 @@ export default {
   },
   methods: {
     onLineChange(line, index) {
-      console.log("666666666666:" + JSON.stringify(line));
       if (this.$refs.player) {
         this.$refs.player.onSwitchSource(line.route_url);
         this.active_route = index;
@@ -171,7 +167,6 @@ export default {
           delay = 1000;
         }
 
-        console.log("555555555:" + JSON.stringify(this.video_data));
         setTimeout(() => {
           // 切换封面
           this.$refs.player.setVideoPoster(this.video_data.thumbnail);
